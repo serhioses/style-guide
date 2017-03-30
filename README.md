@@ -2,11 +2,11 @@
 
 ## General
 * Comment, at least, such parts of the code, that are hardly understandable;
-* never use transliteration. Always use English words
+* never use transliteration. Always use English words;
 * do not use inline styles and scripts right inside the html. There are really a few cases when it's necessary;
 * include scripts before closing body tag;
 * use only spaces (2 or 4) not tabs to shift code;
-* write the code as tree-like structure;
+* write code as tree-like structure;
 * give to classes and variables logical and understandable names.
 
 ## HTML/Smarty
@@ -16,10 +16,10 @@
 * prevent using an empty line for separating html;
 * use double quotes inside attributes;
 * attributes order must be the following: [xmlns, id, class, width, height, viewBox, fill, src, href, type, name, value, maxlength, checked, selected, readonly, disabled, other attributes, data-attributes, custom attributes];
-* always close tags event if it is self-closing element;
+* always close tags event if it is a self-closing element;
 
 ## CSS
-* Follow a cetrain order of properties in your stylesheets. For example, block model properties (display, margin, width), positioning properties (position, top, left), font properties (font-family, font-size), etc. So the idea is not to mix properties that are not related to each other.
+* Follow a cetrain order of properties in your stylesheets. For example, block model properties (display, margin, width), positioning properties (position, top, left), font properties (font-family, font-size), etc. So the idea is not to mix properties that are not related to each other;
 * every pair of property-value must begin with a new line;
 ```css
 // Wrong (all on one line)
@@ -35,7 +35,7 @@
 
 // Right
 .selector {
-position: relative;
+    position: relative;
     font-size: 1rem;
     font-weight: bold;
     text-align: center;
@@ -69,7 +69,7 @@ position: relative;
 Use BEM with mutations. What does it mean? For css use block-element-modifier conception but with some changes, which are convenient for online-stores.
 The first change is that we have `grid classes` such as "container", "row", "col-", etc.
 The secong change is that we have `routine classes` that are constant through all of the media queries. These classes describe some common and constant behavior. For example, .text-center class centers text and this behavior is unchangeble. You cannot overwrite such a rule by custom selector or change it on a certain media query, because it breaks the idea of `routine classes`.
-`Grid classes` and `routine classes` don't influence on a BEM flow in HTML. This means that you can use these classes everywhere.
+`Grid classes` and `routine classes` don't influence on the BEM flow in HTML. This means that you can use these classes everywhere.
 
 ## Javascript
 * Don't use global variables, except for such cases as plugin, library, framework or third-party API that makes impossible using local variables;
@@ -112,7 +112,7 @@ function func () {
 * prefer "function declaration" over "function expression";
 * functions constructors must begin with a capital letter;
 * prefer "forEach" over "for" loop;
-* use literal for creating new arrays or objects instead of using constructors;
+* use literals for creating new arrays or objects instead of using constructors;
 ```javascript
 // Wrong
 var arr = new Array();
@@ -123,10 +123,10 @@ var arr = [],
     obj = {};
 ```
 * save a value into a variable if you use it more than once;
-* every function have to do only what it is supposed to do. This means, if a function gets the given element height, it doesn't have to it's background color. If a function opens a modal window, it doesn't have to validate form inside the window. How you name a function so it works, no more no less;
+* every function have to do only what it is supposed to do. This means, if a function gets the given element height, it doesn't have to change it's background color. If a function opens a modal window, it doesn't have to validate form inside the window. How you name a function so it works, no more no less.
 
 ## jQuery
-* use event delegation pattern for adding event listeners. The closer parent element, the faster event occurs. Because by default almost every event bubbles from the most nested element to the document;
+* Use event delegation pattern for adding event listeners. The closer parent element, the faster event occurs. Because by default almost every event bubbles from the most nested element to the document;
 ```javascript
 // Wrong
 $('.selector').click(function () {
@@ -143,12 +143,12 @@ $('.container-that-contains-selector').on('click', '.selector', function () {
     // some code here
 });
 ```
-* use "done", "fail", "always", "then" methods instead of "success", "error", "complete";
+* use "done", "fail", "always", "then" methods instead of "success", "error", "complete" in ajax;
 * it's really cool to remove inline styles after jQuery method have finished it's work, because this makes us ease to style element by css.
 
 ## Recomendations
 ### Stylesheet
-* Use SASS preprocessor and Autoprefixer plugin because this simplifies writing styles and makes possible to separate styles;
+* Use SASS preprocessor and Autoprefixer plugin because this simplifies writing styles and makes possible to separate styles.
 
 ### Javascript
 * Using Requirejs library makes possible to load all scripts asynchronously, write modular encapsulated code with dependencies and makes us ease to include scripts only needed by a certain page.
