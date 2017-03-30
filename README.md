@@ -77,6 +77,7 @@ The secong change is that we have `routine classes` that are constant through al
 * use single quotes instead of double quotes;
 * always use "===" instead of "==";
 * constants must look like "CONST_NAME";
+* always use curly braces in If, Switch, For statements even if there is just one line of code;
 * declare variables at the top of a function (bacause of variable hoisting) and separate them by comma;
 ```javascript
 // Wrong
